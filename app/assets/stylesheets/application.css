@@ -169,6 +169,21 @@ img {
    margin-left: auto;
 }
 
+/* loading */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
 /* header */
 
 header {
