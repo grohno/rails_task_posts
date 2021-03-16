@@ -10,9 +10,9 @@
     </div>
   <% end %>
   <div class="post_content">
-    <%= form.label :content, "いまどうしてる？" %><br>
-    <%= form.text_field :content %>
+    <%= form.label :content, "いまの気持ちをTweet！" %>
+    <%= form.text_area :content %>
   </div>
-  <%= form.submit "ツイートする" %>
+  <p><%= form.submit "ツイートする" %></p>
 <% end %>
-<%= link_to "back to list", posts_path %>
+<p class="back"><%= link_to "back to list", posts_path %></p>

@@ -1,7 +1,9 @@
-<h2>この内容でつぶやく</h2>
-<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <p>本文:<%= @post.content %></p>
-  <%= form.submit  "つぶやく" %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
+<%= render 'header' %>
+      <h2>この内容でつぶやく？</h2>
+      <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+        <%= form.hidden_field :content %>
+        <p>本文:<%= @post.content %></p>
+        <%= form.submit  "つぶやく" %>
+        <%= form.submit "戻る", name: 'back' %>
+      <% end %>
+<%= render 'footer' %>

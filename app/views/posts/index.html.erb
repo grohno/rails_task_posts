@@ -1,19 +1,25 @@
-<h1>ホーム</h1>
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th colspan="4">
-      <h2>いまどうしてる？</h2>
-      <p><%= link_to 'ツイートする', new_post_path %></p>
-    </th>
-  </tr>
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
-    <td><%= link_to 'show more!', post_path(post.id) %></td>
-    <td><%= link_to "edit tweet", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to 'delete tweet', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-</td>
-  </tr>
-<% end %>
-</table>
+<%= render 'header' %>
+      <% if flash[:notice] %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <table>
+        <tr>
+          <th colspan="4">
+            <h2>いまどうしてる？</h2>
+            <p><%= link_to 'ツイートする', new_post_path %></p>
+          </th>
+        </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <p class="content"><%= post.content %></p>
+            <p class="btn_block">
+              <span class="show"><%= link_to 'show more!', post_path(post.id) %></span>
+              <span class="edit"><%= link_to "edit tweet", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></span>
+              <span class="delete"><%= link_to 'delete tweet', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></span>
+            </p>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+<%= render 'footer' %>

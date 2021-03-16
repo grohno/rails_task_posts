@@ -1,2 +1,5 @@
-<h1>あなたのつぶやき</h1>
-<p><%= @post.content %></p>
+<%= render 'header' %>
+      <h2>あなたのつぶやき</h2>
+      <p class="content"><%= @post.content %></p>
+      <p class="back"><%= link_to "back to list", posts_path %></p>
+<%= render 'footer' %>
