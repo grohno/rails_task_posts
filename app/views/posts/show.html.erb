@@ -1,5 +1,5 @@
 <%= render 'header' %>
       <h2>あなたのつぶやき</h2>
       <p class="content"><%= @post.content %></p>
-      <p class="back"><%= link_to "back to list", posts_path %></p>
+      <p class="back"><%= link_to "back to list", posts_path, data: {"turbolinks" => false} %></p>
 <%= render 'footer' %>

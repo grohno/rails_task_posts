@@ -15,4 +15,4 @@
   </div>
   <p><%= form.submit "ツイートする" %></p>
 <% end %>
-<p class="back"><%= link_to "back to list", posts_path %></p>
+<p class="back"><%= link_to "back to list", posts_path, data: {"turbolinks" => false} %></p>

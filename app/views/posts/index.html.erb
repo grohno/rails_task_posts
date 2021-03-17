@@ -6,7 +6,7 @@
         <tr>
           <th colspan="4">
             <h2>いまどうしてる？</h2>
-            <p><%= link_to 'ツイートする', new_post_path %></p>
+            <p><%= link_to 'ツイートする', new_post_path, data: {"turbolinks" => false} %></p>
           </th>
         </tr>
       <% @posts.each do |post| %>
@@ -14,9 +14,9 @@
           <td>
             <p class="content"><%= post.content %></p>
             <p class="btn_block">
-              <span class="show"><%= link_to 'show more!', post_path(post.id) %></span>
-              <span class="edit"><%= link_to "edit tweet", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></span>
-              <span class="delete"><%= link_to 'delete tweet', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></span>
+              <span class="show"><%= link_to 'show more!', post_path(post.id), data: {"turbolinks" => false} %></span>
+              <span class="edit"><%= link_to "edit tweet", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？', "turbolinks" => false } %></span>
+              <span class="delete"><%= link_to 'delete tweet', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？', "turbolinks" => false } %></span>
             </p>
           </td>
         </tr>
