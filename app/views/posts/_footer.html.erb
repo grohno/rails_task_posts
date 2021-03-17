@@ -1,4 +1,8 @@
     </article>
     <footer>
-      <p class="copyright"><small>Copyright 2021 TwitterClone All Rights Reserved.</small></p>
+      <% 
+        require "date"
+        date = Date.new
+      %>
+      <p class="copyright"><small>Copyright <%= date.year.to_s %> TwitterClone All Rights Reserved.</small></p>
     </footer>
